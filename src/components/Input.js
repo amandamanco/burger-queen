@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Inputs = styled.input`
   border-radius: 8px;
-  margin-bottom: 15px;
+  margin-bottom: ${props => props.margin || "15px"};
   padding: 15px;
   background-color: #F6F6F6;
   border: 1px solid #E8E8E8;
@@ -20,6 +20,7 @@ const Input = (props) => {
           name={props.name}
           onChange={props.onChange}
           checked={props.checked}
+          margin="0"
         />
         {props.value}
       </label>
@@ -27,6 +28,7 @@ const Input = (props) => {
   } else {
     return (
       <Inputs
+        margin={props.margin}
         type={props.type}
         placeholder={props.placeholder}
         value={props.value}

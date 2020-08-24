@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import img from '../../assets/faixa.png';
-import Button from '../Button';
 
 const Img = styled.img`
-  width: 50%;
-  margin: 0 0 0 8%;
+  width: 65%;
+  padding: 0 0 10px 0;
   @media (min-width: 320px) and (max-width: 500px) {
     width: 80%;
     height: auto;
@@ -19,9 +18,8 @@ const Img = styled.img`
 `;
 
 const Bell = styled.img`
-  width: 45px;
-  height: 45px;
-`;
+  width: 6%;
+  `;
 
 
 const Container = styled.header`
@@ -44,16 +42,9 @@ const Container = styled.header`
 const Header = (props) => {
   return (
     <Container>
-      <Img src={img}/>
-      <Bell src={props.bell} onClick={props.onClickBell}/>
-      <Button 
-        text='Sair'
-        color='white' 
-        background='#0AA7E2' 
-        width="10%" 
-        height="76%" 
-        margin="0" 
-        onClick={props.onClick} />
+      <Img src={img} />
+      <Bell src={props.bell} onClick={props.onClickBell} />
+      {props.children}
     </Container>
   )
 }

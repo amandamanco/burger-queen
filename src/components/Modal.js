@@ -10,7 +10,7 @@ const Background = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 2;
   background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
@@ -18,45 +18,53 @@ const Background = styled.div`
 `;
 
 const Close = styled.button`
-  width: 25px;
-  height: 25px;
-  background-color: black;
+  width: 32px;
+  height: 32px;
+  background-color: tomato;
   color: white;
+  font-size: 20px;
   position: absolute;
-  right: 1%;
-  top: 1%;
+  right: 5%;
+  top: 4%;
+  border: 2px solid tomato;
   border-radius: 50%;
 `;
 
 const Modal = (props) => {
-    return (
-        <Background>
-          <Container 
-          color='white' 
-          width='60%' 
-          height='50%' 
-          justify='space-evenly'  
-          direction='column'
-          radius='8px'
-          padding='30px'
-          >
-            <Close onClick={props.onClose}>X</Close>
-            <h3>Tipo de hamburguer</h3>
-            <Container direction='row' justify='space-evenly'>
-              <Input onChange={props.onChangeBurger} type='radio' value=' Bovino' name='hamburger'/>
-              <Input onChange={props.onChangeBurger} type='radio' value=' Frango' name='hamburger'/>
-              <Input onChange={props.onChangeBurger} type='radio' value=' Vegano' name='hamburger'/>
-            </Container>
-            <h3>Extra</h3>
-            <Container direction='row' justify='space-evenly'>
-              <Input onChange={props.onChangeExtra} type='radio' value=' Ovo' name='extra'/>
-              <Input onChange={props.onChangeExtra} type='radio' value=' Queijo' name='extra'/>
-              <Input onChange={props.onChangeExtra} type='radio' value=' Nenhum' name='extra'/>
-            </Container>
-            <Button onClick={props.onClick} text='Enviar' />
-          </Container>
-        </Background>
-    )
+  return (
+    <Background>
+      <Container
+        color='white'
+        width='60%'
+        height='48%'
+        justify='space-around'
+        direction='column'
+        radius='26px'
+        padding='30px'
+      >
+        <Close onClick={props.onClose}>X</Close>
+        <Container justify="center">
+        <h3>Tipo de hamburguer</h3>
+        </Container>
+        <Container direction='row' justify='space-evenly' margin="0">
+          <Input onChange={props.onChangeBurger} type='radio' value=' Bovino' name='hamburger' margin="0"/>
+          <Input onChange={props.onChangeBurger} type='radio' value=' Frango' name='hamburger' margin="0"/>
+          <Input onChange={props.onChangeBurger} type='radio' value=' Vegano' name='hamburger' margin="0"/>
+        </Container>
+        <Container justify="center" margin="10px 0 0 0">
+        <h3>Extra</h3>
+        </Container>
+        <Container direction='row' justify='space-evenly'>
+          <Input onChange={props.onChangeExtra} type='radio' value=' Ovo' name='extra' />
+          <Input onChange={props.onChangeExtra} type='radio' value=' Queijo' name='extra' />
+          <Input onChange={props.onChangeExtra} type='radio' value=' Nenhum' name='extra' />
+        </Container>
+        <Container justify="center" align="flex-end">
+          <Button width="50%" onClick={props.onClick} text='Enviar' />
+        </Container>
+      </Container>
+    </Background>
+  )
 }
 
 export default Modal;

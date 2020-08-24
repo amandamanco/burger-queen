@@ -13,9 +13,9 @@ const Button = styled.button`
   margin:${props => props.margin || "12px"};
   outline: none;
   &:hover {
-    background-color: #1E7B9E;
+    background-color: #137CA3;
     color: white;
-    border: #1E7B9E;
+    border: #137CA3;
   }
   @media (min-width: 320px) and (max-width: 500px) {
     margin: 16px 0 12px 0;
