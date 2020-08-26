@@ -1,27 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 import CheckImg from '../assets/check.png';
-
-const List = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin: 5px 0;
-`;
+import Container from '../components/container/ContainerMenu.js';
 
 const Check = styled.img`
-  width: 30px;
-  height: 30px;
+  width: 36px;
+  height: 36px;
 `;
 
 const Notification = (props) => {
   return (
-    <List>
-      <div>
+    <Container justify="space-between" margin="0 0 24px 0" align="center">
+      <Container width="80%" direction="column">
         <h4>Mesa {props.table} ({props.name})</h4>
         <p>{props.order}</p>
-      </div>
+      </Container>
       <Check src={CheckImg} alt="Check" onClick={props.onClick} />
-    </List>
+    </Container>
   )
 }
 

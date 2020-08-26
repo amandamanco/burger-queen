@@ -44,20 +44,29 @@ const Modal = (props) => {
       >
         <Close onClick={props.onClose}>X</Close>
         <Container justify="center">
-        <h3>Tipo de hamburguer</h3>
+          <h3>Tipo de hamburguer</h3>
         </Container>
         <Container direction='row' justify='space-evenly' margin="0">
-          <Input onChange={props.onChangeBurger} type='radio' value=' Bovino' name='hamburger' margin="0"/>
-          <Input onChange={props.onChangeBurger} type='radio' value=' Frango' name='hamburger' margin="0"/>
-          <Input onChange={props.onChangeBurger} type='radio' value=' Vegano' name='hamburger' margin="0"/>
+          <Input onChange={props.onChangeBurger} type='radio' value=' Bovino' name='hamburger' margin="0" />
+          <Input onChange={props.onChangeBurger} type='radio' value=' Frango' name='hamburger' margin="0" />
+          <Input onChange={props.onChangeBurger} type='radio' value=' Vegano' name='hamburger' margin="0" />
         </Container>
         <Container justify="center" margin="10px 0 0 0">
-        <h3>Extra</h3>
+          <h3>Extra (R$ 1,00 cada)</h3>
         </Container>
-        <Container direction='row' justify='space-evenly'>
-          <Input onChange={props.onChangeExtra} type='radio' value=' Ovo' name='extra' />
-          <Input onChange={props.onChangeExtra} type='radio' value=' Queijo' name='extra' />
-          <Input onChange={props.onChangeExtra} type='radio' value=' Nenhum' name='extra' />
+        <Container direction='row' justify='space-evenly' padding="6px">
+          <form>
+            <input onChange={props.onChangeExtra} type="checkbox" name="ovo" value="Ovo" />
+            <label> Ovo</label>
+            <input type="checkbox" name="queijo" value="Queijo" />
+            <label> Queijo</label>
+            <input type="checkbox" name="nenhum" value="Nenhum" />
+            <label> Nenhum</label>
+          </form>
+
+          {/* <Input onChange={props.onChangeExtra} type='checkbox' value=' Ovo' name='extra1' />
+          <Input onChange={props.onChangeExtra} type='checkbox' value=' Queijo' name='extra2' />
+          <Input onChange={props.onChangeExtra} type='checkbox' value=' Nenhum' name='extra3' /> */}
         </Container>
         <Container justify="center" align="flex-end">
           <Button width="50%" onClick={props.onClick} text='Enviar' />

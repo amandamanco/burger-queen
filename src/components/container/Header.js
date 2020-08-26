@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import img from '../../assets/faixa.png';
+import Container from '../container/ContainerMenu.js';
 
 const Img = styled.img`
   width: 65%;
@@ -18,30 +19,22 @@ const Img = styled.img`
 `;
 
 const Bell = styled.img`
-  width: 6%;
+  width: 5%;
+  margin: 0 14% 0 0;
   `;
-
-
-const Container = styled.header`
-  width: 100%;
-  height: auto;
-  display: flex;
-  position: absolute;
-  z-index: 1;
-  justify-content: space-between;
-  align-items: start;
-  padding: 20px;
-  background-color: none;
-  @media (min-width: 320px) and (max-width: 500px){
-    justify-content: space-around;
-    align-items: center;
-    margin: 0;
-  }
-`;
 
 const Header = (props) => {
   return (
-    <Container>
+    <Container
+      width="100%"
+      position="absolute"
+      zindex="1"
+      justify="space-between"
+      align="start"
+      padding="20px"
+      mediaJustify="space-around"
+      mediaAlign="center"
+      mediaMargin="0">
       <Img src={img} />
       <Bell src={props.bell} onClick={props.onClickBell} />
       {props.children}

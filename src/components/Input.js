@@ -7,6 +7,7 @@ const Inputs = styled.input`
   padding: 15px;
   background-color: #F6F6F6;
   border: 1px solid #E8E8E8;
+  outline: none;
 `;
 
 const Input = (props) => {

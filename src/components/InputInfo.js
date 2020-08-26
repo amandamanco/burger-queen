@@ -7,6 +7,7 @@ const Identification = styled.input`
 	border: 2px solid gray;
   border-radius:10px;
   font-size: 18px;
+  outline: none;
   border: 1px solid rgba(0, 0, 0, 0.4);
   margin: ${props => props.margin || "4px"};
   @media (min-width: 320px) and (max-width: 500px){

@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 const Text = styled.p`
   color: ${props => props.color || "black"};
-  font-size: ${props => props.size};
+  font-size: ${props => props.size || "18px"};
   padding: ${props => props.padding || "6px"};
-  text-align: center;
+  text-align: ${props => props.align || "center"};
   margin: ${props => props.margin || "0 0 32px 0"};
   @media (min-width: 320px) and (max-width: 500px) {
     font-size: ${props => props.mediaSize || '16px'}
@@ -18,6 +18,7 @@ function TextDefault(props) {
       color={props.color}
       padding={props.padding}
       size={props.size}
+      align={props.align}
       onChange={props.onChange}
       margin={props.margin}
     >{props.text}</Text>

@@ -6,7 +6,7 @@ const Button = styled.button`
   width: ${props => props.width || "auto"};
   height: ${props => props.height || "auto"};
   background-color: ${props => props.background || "#0AA7E2"};
-  border: 2px solid #0AA7E2;
+  border: 2px solid ${props => props.borderColor || "#0AA7E2"};
   border-radius: 30px;
   color: ${props => props.color || "#FFF"};  
   font-size: ${props => props.font || "18px"};
@@ -35,6 +35,7 @@ function ButtonLogin(props) {
     width={props.width}
     height={props.height}
     background={props.background}
+    borderColor={props.borderColor}
     color={props.color}
     font={props.font}
     margin={props.margin}

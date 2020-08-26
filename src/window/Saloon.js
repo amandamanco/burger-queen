@@ -32,7 +32,8 @@ const Saloon = (props) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [burger, setBurger] = useState({});
   const [burgerInfo, setBurgerInfo] = useState('');
-  const [extra, setExtra] = useState('')
+  const [extra, setExtra] = useState('');
+  // const [extraTwo, setExtraTwo] = useState('');
   const [err, setErr] = useState('');
   const [bell, setBell] = useState(BellNotified)
   const [window, setWindow] = useState(false);
@@ -189,17 +190,17 @@ const Saloon = (props) => {
           margin='8% 0 0 0'
           mediaMargin='25% 0 0 0'
           maxMargin='6% 0 0 0'
-          padding='3%'
+          padding='2% 3% 0 3%'
           shadow='2px 2px 7px 1px rgba(0,0,0,0.2)'
           radius='5%'
           right='1%'
-          width='34%'
+          width='35%'
           height='50%'>
           {readyOrders.map((elem, index) => (<Notification key={elem.id} table={elem.table} name={elem.name} order={elem.order.map(i => (`${i.item}, `))} onClick={(e) => delivered(e, elem.id, index)} />))}
         </Container>) : null}
       <Container direction='row' height='100%' mediaMargin='0'>
         <Container direction="column"
-          width="70%" height='100%'
+          width="68%" height='100%'
           aling="center"
           background={Background}
           mediaWidth='100%'
@@ -263,6 +264,7 @@ const Saloon = (props) => {
               onClose={() => setModalIsOpen(false)}
               onChangeBurger={(e) => setBurgerInfo(e.target.value)}
               onChangeExtra={(e) => setExtra(e.target.value)}
+
               onClick={burgerOrder}
             />
           ) : null}
@@ -283,7 +285,6 @@ const Saloon = (props) => {
                   value={finalOrder.table}
                   width='40%'
                   height='32px'
-                  required
                 />
               </Container>
               <Container direction="row" justify="center" mediaDirection='row' mediaJustify='center'>
@@ -293,7 +294,6 @@ const Saloon = (props) => {
                   value={finalOrder.name}
                   width="40%"
                   height="32px"
-                  required
                 />
               </Container>
             </Container>
@@ -304,8 +304,8 @@ const Saloon = (props) => {
               direction="column"
               align="center"
               overflow="scroll"
-              height="210px"
-              width="95%"
+              height="226px"
+              width="100%"
               margin="10px 0 24px 0"
               mediaHeight='100px'>
               <hr width="90%" />
@@ -317,9 +317,9 @@ const Saloon = (props) => {
                   extra={i.extra}
                   onClick={(event) => deleteItem(event, index)} />
               ))}
-              <hr width="90%" />
             </Container>
             <Container direction="column" justify="flex-end" align="center">
+              <hr width="90%" />
               <Note
                 onChange={(e) => setFinalOrder({ ...finalOrder, obs: e.target.value })}
                 value={finalOrder.obs}
@@ -336,7 +336,7 @@ const Saloon = (props) => {
                 text={`Concluir R$ ${total(order)}`}
                 width="88%"
                 height="52px"
-                margin="28px 0 18px 0" />
+                margin="38px 0 18px 0" />
             </Container>
           </ResumeOrder>
         </Container>
